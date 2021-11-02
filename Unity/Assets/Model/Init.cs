@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Threading;
 using UnityEngine;
-
+using Mirror;
 namespace ETModel
 {
 	public class Init : MonoBehaviour
 	{
+		public void Awake()
+		{
+
+			// 返回选角大厅场景时，删除重复的Global物体
+			if (Manager.RPG && Manager.RPG.state == NetworkState.World)
+				Destroy(this.gameObject);
+		}
 		private void Start()
 		{
+			Time.fixedDeltaTime = 1f / 60;
+			// 取得管理组件
+			Manager.RPG = RPGManager.singleton;
 			this.StartAsync().Coroutine();
 		}
 		
@@ -39,10 +49,12 @@ namespace ETModel
 				Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
 				Game.Scene.AddComponent<OpcodeTypeComponent>();
 				Game.Scene.AddComponent<MessageDispatcherComponent>();
+				UnitConfig unitConfig = (UnitConfig)Game.Scene.GetComponent<ConfigComponent>().Get(typeof(UnitConfig), 1001);
+				Log.Debug($"config {JsonHelper.ToJson(unitConfig)}");
+                Game.Hotfix.GotoHotfix();
 
-				Game.Hotfix.GotoHotfix();
-
-				Game.EventSystem.Run(EventIdType.TestHotfixSubscribMonoEvent, "TestHotfixSubscribMonoEvent");
+               // Game.EventSystem.Run(EventIdType.TestHotfixSubscribMonoEvent, "TestHotfixSubscribMonoEvent");
+				Game.EventSystem.Run(EventIdType.GameLogin);
 			}
 			catch (Exception e)
 			{

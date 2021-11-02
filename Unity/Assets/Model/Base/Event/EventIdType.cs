@@ -2,6 +2,14 @@
 {
 	public static class EventIdType
 	{
+		public const string GameLogin = "GameLogin";
+		public const string GameRegister = "GameRegister";
+		public const string BackLobby = "BackLobby";
+		public const string BackLogin = "BackLogin";
+
+		public const string GameLogout = "GameLogout";
+		public const string GameEnterMap = "GameEnterMap";
+		public const string EnterMapFinish = "EnterMapFinish";
 		public const string RecvHotfixMessage = "RecvHotfixMessage";
 		public const string BehaviorTreeRunTreeEvent = "BehaviorTreeRunTreeEvent";
 		public const string BehaviorTreeOpenEditor = "BehaviorTreeOpenEditor";

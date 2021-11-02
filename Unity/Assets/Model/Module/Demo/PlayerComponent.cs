@@ -53,6 +53,13 @@ namespace ETModel
 
 		public void Remove(long id)
 		{
+			Player player;
+			this.idPlayers.TryGetValue(id, out player);
+			this.idPlayers.Remove(id);
+			player?.Dispose();
+		}
+		public void RemoveNoDispose(long id)
+		{
 			this.idPlayers.Remove(id);
 		}
 
