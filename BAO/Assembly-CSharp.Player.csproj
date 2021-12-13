@@ -53,8 +53,23 @@
     <UnityVersion>2021.1.21f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\CameraControlller.cs" />
-    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetworkMenu.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\General\Vec2.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\General\Info.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Controller\CameraControlller.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetworkUIEvent.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetworkPlayer.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\General\TimeHelper.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\Network.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Controller\AudioSourceController.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Controller\VideoPlayController.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Message\MessagePacker.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetworkGameplay.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Init\Init.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetWorkClient.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\NetWork\NetworkUtils.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\Controller\AudioListenerController.cs" />
+    <Compile Include="Assets\SimpleNaturePack\Scenes\Scripts\General\WavUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -251,6 +266,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>D:\Program Files\unity\Unity 2021.1.21f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Message">
+      <HintPath>Assets\Plugins\Message.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
